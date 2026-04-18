@@ -39,7 +39,8 @@
               "crossingFlows": [
                 "0863e589-e9f8-4f2a-937f-55611eef8053",
                 "2f67fc6f-56e6-4196-ad0f-5262ebbde931",
-                "16189552-906d-4fae-a99b-b0a130abfa15"
+                "16189552-906d-4fae-a99b-b0a130abfa15",
+                "32227342-68c0-42e1-8692-bc1528868886"
               ],
               "containedElements": [
                 "22b188bb-14bd-4057-b43e-468fe6eb953c",
@@ -875,6 +876,7 @@
               "protocol": "",
               "threats": [],
               "trustBoundaryIds": [
+                "95ea573d-1bac-4736-a92d-08102cc12f01",
                 "460f6506-2d1e-4274-8022-d60f6fba3d97"
               ]
             },
@@ -883,8 +885,8 @@
             ],
             "id": "32227342-68c0-42e1-8692-bc1528868886",
             "source": {
-              "x": 380,
-              "y": 290
+              "cell": "22b188bb-14bd-4057-b43e-468fe6eb953c",
+              "port": "32ac5cd8-7f4f-4e1b-971f-a363f137d2f1"
             },
             "target": {
               "cell": "116fc453-12d9-4702-b283-d591383a3ded",
@@ -892,28 +894,32 @@
             },
             "vertices": [
               {
-                "x": 500,
-                "y": 250
+                "x": 390,
+                "y": 260
               },
               {
-                "x": 540,
+                "x": 480,
                 "y": 230
               },
               {
-                "x": 590,
-                "y": 200
+                "x": 520,
+                "y": 210
               },
               {
-                "x": 614,
-                "y": 200
+                "x": 570,
+                "y": 180
+              },
+              {
+                "x": 594,
+                "y": 180
+              },
+              {
+                "x": 640,
+                "y": 210
               },
               {
                 "x": 660,
-                "y": 230
-              },
-              {
-                "x": 680,
-                "y": 230
+                "y": 210
               }
             ]
           },
@@ -1191,6 +1197,7 @@
             },
             "visible": true,
             "shape": "process",
+            "zIndex": 18,
             "ports": {
               "groups": {
                 "top": {
@@ -1274,7 +1281,6 @@
               ]
             },
             "id": "ae44ebc6-0cc1-4c9f-b30f-15daac16a2cc",
-            "zIndex": 18,
             "data": {
               "type": "tm.Process",
               "name": "API Externa\nServicio Externo\nPayment",
