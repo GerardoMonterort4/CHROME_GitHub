@@ -71,7 +71,8 @@
                 "16189552-906d-4fae-a99b-b0a130abfa15",
                 "48eb49a1-e517-4aff-a7b9-929206ef8d2a",
                 "32227342-68c0-42e1-8692-bc1528868886",
-                "d173e877-e7d4-4a3d-947f-1854fe84820e"
+                "d173e877-e7d4-4a3d-947f-1854fe84820e",
+                "9f7c95a2-0481-4cb5-b4ca-c7530244c5d8"
               ],
               "containedElements": [
                 "116fc453-12d9-4702-b283-d591383a3ded",
@@ -686,8 +687,8 @@
               "y": 420
             },
             "target": {
-              "x": 1090,
-              "y": 610
+              "cell": "ae44ebc6-0cc1-4c9f-b30f-15daac16a2cc",
+              "port": "f310ab04-4472-4002-8e60-1ff7502fdd4a"
             },
             "vertices": [
               {
@@ -1161,20 +1162,32 @@
               "isPublicNetwork": false,
               "protocol": "",
               "threats": [],
-              "trustBoundaryIds": []
+              "trustBoundaryIds": [
+                "460f6506-2d1e-4274-8022-d60f6fba3d97"
+              ]
             },
             "labels": [
               "Payment Respons"
             ],
             "id": "9f7c95a2-0481-4cb5-b4ca-c7530244c5d8",
             "source": {
-              "x": 890,
-              "y": 350
+              "cell": "116fc453-12d9-4702-b283-d591383a3ded",
+              "port": "a4a4bbf3-c37f-45a4-9881-1b320b6076d8"
             },
             "target": {
-              "x": 1190,
-              "y": 520
-            }
+              "cell": "ae44ebc6-0cc1-4c9f-b30f-15daac16a2cc",
+              "port": "42ec0cc4-a2ec-4f16-88c9-53081bb81b0a"
+            },
+            "vertices": [
+              {
+                "x": 950,
+                "y": 370
+              },
+              {
+                "x": 1080,
+                "y": 470
+              }
+            ]
           },
           {
             "position": {
