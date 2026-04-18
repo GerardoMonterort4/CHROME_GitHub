@@ -1169,6 +1169,126 @@
               "x": 1190,
               "y": 520
             }
+          },
+          {
+            "position": {
+              "x": 1119,
+              "y": 532
+            },
+            "size": {
+              "width": 150,
+              "height": 90
+            },
+            "attrs": {
+              "text": {
+                "text": "API Externa\nServicio Externo\nPaymen"
+              },
+              "body": {
+                "stroke": "#333333",
+                "strokeWidth": 1.5,
+                "strokeDasharray": null
+              }
+            },
+            "visible": true,
+            "shape": "process",
+            "ports": {
+              "groups": {
+                "top": {
+                  "position": "top",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "right": {
+                  "position": "right",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "bottom": {
+                  "position": "bottom",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "left": {
+                  "position": "left",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                }
+              },
+              "items": [
+                {
+                  "group": "top",
+                  "id": "42ec0cc4-a2ec-4f16-88c9-53081bb81b0a"
+                },
+                {
+                  "group": "right",
+                  "id": "3e67e370-3b8b-4f98-8799-0b44ee02ab0c"
+                },
+                {
+                  "group": "bottom",
+                  "id": "f310ab04-4472-4002-8e60-1ff7502fdd4a"
+                },
+                {
+                  "group": "left",
+                  "id": "725d66bf-93a2-41f0-9bdb-2404b0f54099"
+                }
+              ]
+            },
+            "id": "ae44ebc6-0cc1-4c9f-b30f-15daac16a2cc",
+            "zIndex": 18,
+            "data": {
+              "type": "tm.Process",
+              "name": "API Externa\nServicio Externo\nPayment",
+              "description": "",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "handlesCardPayment": false,
+              "handlesGoodsOrServices": false,
+              "isWebApplication": false,
+              "privilegeLevel": "",
+              "threats": []
+            }
           }
         ],
         "description": "Modelo de clase DSA"
