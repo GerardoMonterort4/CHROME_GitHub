@@ -122,8 +122,8 @@
                 "text": "Usuario/Navegad"
               },
               "body": {
-                "stroke": "#333333",
-                "strokeWidth": 1.5,
+                "stroke": "red",
+                "strokeWidth": 2.5,
                 "strokeDasharray": null
               }
             },
@@ -220,9 +220,112 @@
               "isTrustBoundary": false,
               "outOfScope": false,
               "reasonOutOfScope": "",
-              "hasOpenThreats": false,
+              "hasOpenThreats": true,
               "providesAuthentication": false,
-              "threats": []
+              "threats": [
+                {
+                  "id": "e19970d8-f9cd-4cc2-9c13-1675560a7d5f",
+                  "title": "suplantacion en login",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Spoofing",
+                  "description": "el atacante intenta hacerse pasar por otro usuario o entidad legitima",
+                  "mitigation": "Autenticacion multifactor, tokens firmados, validacion de sesion ",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 1,
+                  "score": "7"
+                },
+                {
+                  "id": "3ad30e84-bd46-4d78-8530-9312b8f55d51",
+                  "title": "cookies robadas ",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Spoofing",
+                  "description": "uso de cookies robadas para acceso no autorizado",
+                  "mitigation": "Cookies seguras (HttpOnly, Secure), rotacion de tokens, deteccion de sesion duplicada",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 2,
+                  "score": "7"
+                },
+                {
+                  "id": "dc20fe37-36f9-4211-9111-3bbd29f8171a",
+                  "title": "negacion de acciones",
+                  "status": "Open",
+                  "severity": "Medium",
+                  "type": "Repudiation",
+                  "description": "el atacante niega las acciones de firmas y logs",
+                  "mitigation": "logs inmutables, firmas digitales, trazabilidad",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 3,
+                  "score": "7"
+                },
+                {
+                  "id": "b476834d-3611-4b86-a974-e4b668b431d1",
+                  "title": "cabeceras falsas",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Repudiation",
+                  "description": "manipulacion de cabeceras para ocultar identidad",
+                  "mitigation": "validacion de cabeceras, correlacion de ip y sesion deteccion de inconsistencias",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 4,
+                  "score": "7"
+                },
+                {
+                  "id": "2b391134-74db-4ed7-b49a-4e013c50c06a",
+                  "title": "negacion de envio",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Repudiation",
+                  "description": "negacion de envio de datos sensibles",
+                  "mitigation": "confirmaciones explicitas, registro de consentimiento, logs firmados",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 5,
+                  "score": "7"
+                },
+                {
+                  "id": "a504c5ad-4964-4c4a-b828-a34abaea63db",
+                  "title": "phishing en navegador",
+                  "status": "Open",
+                  "severity": "Critical",
+                  "type": "Spoofing",
+                  "description": "el atacante ataca  dominio, ",
+                  "mitigation": "validar dominio , educacion al usuario",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 6,
+                  "score": "8"
+                },
+                {
+                  "id": "9cb5b3ce-d0c6-4a90-85cb-3cf80ae333e3",
+                  "title": "suplantacion de identidad",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Spoofing",
+                  "description": "el atacante se hace pasar por un usuario ",
+                  "mitigation": "usar queries parametrizables ",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 7,
+                  "score": "7"
+                }
+              ],
+              "threatFrequency": {
+                "spoofing": 4,
+                "repudiation": 3
+              }
+            },
+            "tools": {
+              "items": [
+                "boundary",
+                "button-remove"
+              ],
+              "name": null
             }
           },
           {
@@ -1315,6 +1418,6 @@
     ],
     "diagramTop": 2,
     "reviewer": "",
-    "threatTop": 0
+    "threatTop": 7
   }
 }
