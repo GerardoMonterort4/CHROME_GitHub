@@ -319,13 +319,6 @@
                 "spoofing": 4,
                 "repudiation": 3
               }
-            },
-            "tools": {
-              "items": [
-                "boundary",
-                "button-remove"
-              ],
-              "name": null
             }
           },
           {
@@ -476,7 +469,8 @@
             "shape": "flow",
             "attrs": {
               "line": {
-                "stroke": "#333333",
+                "stroke": "red",
+                "strokeWidth": 2.5,
                 "targetMarker": {
                   "name": "block"
                 },
@@ -497,15 +491,125 @@
               "outOfScope": false,
               "isTrustBoundary": false,
               "reasonOutOfScope": "",
-              "hasOpenThreats": false,
+              "hasOpenThreats": true,
               "isBidirectional": false,
               "isEncrypted": false,
               "isPublicNetwork": false,
               "protocol": "",
-              "threats": [],
+              "threats": [
+                {
+                  "id": "3702d30b-65c9-4fdd-bb33-93a014274f36",
+                  "title": "manipulacion de tokens de sesion",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Tampering",
+                  "description": "alteracion de parametros en al url, para modificar la logica de negocio",
+                  "mitigation": "validcion estricta enservidorr valores firmaso sanitizacion de entrada",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 14,
+                  "score": "7"
+                },
+                {
+                  "id": "195fa2a8-d185-4311-bf96-d5c9cef6ebf6",
+                  "title": "sql inyeccion en la base de datos",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Information disclosure",
+                  "description": "un atacante inyecta codigo en las consultas ",
+                  "mitigation": "usar consultas parametrizadas y validacion estricta de entrada",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 15,
+                  "score": "7"
+                },
+                {
+                  "id": "afb37472-9d08-410b-9ee9-f0d9aa027aaa",
+                  "title": "Cross-Site Scripting (XSS) en la Aplicación Web",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Denial of service",
+                  "description": " un atacante inyecta scripts maliciosos en el navegador del usuario.",
+                  "mitigation": "sanitizar entradas y usar Content Security Policy (CSP).",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 16,
+                  "score": "7"
+                },
+                {
+                  "id": "ba7c3041-8186-4110-9ea8-40ece6a19758",
+                  "title": "Man-in-the-Middle (MITM) en el tráfico HTTP",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Tampering",
+                  "description": "\n\ninterceptar y modificar la comunicación entre navegador y servidor.\n\n",
+                  "mitigation": "usar HTTPS/TLS con certificados válidos.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 17,
+                  "score": "7"
+                },
+                {
+                  "id": "682e27a1-7105-44b8-8285-67ac0f55c10f",
+                  "title": "Exposición de API externa de pagos",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Information disclosure",
+                  "description": "\nrespuestas manipuladas o solicitudes fraudulentas hacia el servicio de pago.\n\n ",
+                  "mitigation": "validar respuestas, usar autenticación fuerte y limitar accesos.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 18,
+                  "score": "7"
+                },
+                {
+                  "id": "a13f0df9-889c-4f10-8afd-3655c49d0ced",
+                  "title": "Exposición de API externa de pagos",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Denial of service",
+                  "description": "\n\nrespuestas manipuladas o solicitudes fraudulentas hacia el servicio de pago.\n\n ",
+                  "mitigation": "validar respuestas, usar autenticación fuerte y limitar accesos.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 19,
+                  "score": "7"
+                },
+                {
+                  "id": "90335560-5eac-4b20-b5c0-b5f61caaac6e",
+                  "title": "Fuga de datos en el Backend",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Tampering",
+                  "description": "\n\n información sensible expuesta por mala configuración o errores de código.\n\n",
+                  "mitigation": "aplicar controles de acceso, logging seguro y cifrado de datos sensibles.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 20,
+                  "score": "7"
+                },
+                {
+                  "id": "4ff781af-3af3-43ec-a48a-bcae060a746c",
+                  "title": "Denegación de Servicio (DoS/DDoS) contra la Aplicación Web",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Information disclosure",
+                  "description": "\n\nRiesgo: sobrecarga de peticiones que inutiliza el servicio.\n\n",
+                  "mitigation": " implementar rate limiting, firewalls y monitoreo de tráfico.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 21,
+                  "score": "7"
+                }
+              ],
               "trustBoundaryIds": [
                 "95ea573d-1bac-4736-a92d-08102cc12f01"
-              ]
+              ],
+              "threatFrequency": {
+                "tampering": 3,
+                "informationDisclosure": 3,
+                "denialOfService": 2
+              }
             },
             "labels": [
               "HTTP Respons"
@@ -536,7 +640,17 @@
                 "x": 350,
                 "y": 290
               }
-            ]
+            ],
+            "tools": {
+              "items": [
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead"
+              ],
+              "name": null
+            }
           },
           {
             "shape": "trust-boundary-curve",
@@ -580,7 +694,8 @@
             "shape": "flow",
             "attrs": {
               "line": {
-                "stroke": "#333333",
+                "stroke": "red",
+                "strokeWidth": 2.5,
                 "targetMarker": {
                   "name": "block"
                 },
@@ -601,15 +716,99 @@
               "outOfScope": false,
               "isTrustBoundary": false,
               "reasonOutOfScope": "",
-              "hasOpenThreats": false,
+              "hasOpenThreats": true,
               "isBidirectional": false,
               "isEncrypted": false,
               "isPublicNetwork": false,
               "protocol": "",
-              "threats": [],
+              "threats": [
+                {
+                  "id": "6fb83d65-5e3d-4e03-b7d6-a6262742739c",
+                  "title": "parametros alterados en URL",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Tampering",
+                  "description": "para modificar la logica de negocio ",
+                  "mitigation": "validacion estricta en servidor  y valores firmados, sanitizacion de entrada ",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 8,
+                  "score": "7"
+                },
+                {
+                  "id": "0cc71dbb-b2e4-4322-8c0e-cf4de8ceb35b",
+                  "title": "credenciales en texto plano",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Information disclosure",
+                  "description": "credenciales o tokens enviados sin cifrado en el request",
+                  "mitigation": "TLS obligatorio, no credenciales en URL, tokens temporales, revision de logs",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 9,
+                  "score": "7"
+                },
+                {
+                  "id": "ee6b0d60-d832-45ba-a319-6e39f923b62a",
+                  "title": "saturacion de endpoint de login",
+                  "status": "Open",
+                  "severity": "Critical",
+                  "type": "Denial of service",
+                  "description": "atque de flooding contra el endpoint de autenticacion para immpedir acceso legitio ",
+                  "mitigation": "rate limiting, bloqueo por IP , balanceo de carga, deteccion deanomalias",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 10,
+                  "score": "9"
+                },
+                {
+                  "id": "98e4858d-7180-4bf4-b004-3f74a0643935",
+                  "title": "inyeccion sql en parametros post",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Tampering",
+                  "description": "parametros manipulados permiten ejecutar comandos sql maliciosos",
+                  "mitigation": "querries parametrizadas, orm seguro, validacion de entrada, monitoreo d consultas",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 11,
+                  "score": "7"
+                },
+                {
+                  "id": "7e8ff3e5-ee5a-4a0a-a107-1834d5c88696",
+                  "title": "tokens expuestos encabeceras",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Information disclosure",
+                  "description": "cabeceras http contienen tokens o claves sensibles quepuedenser interceptados",
+                  "mitigation": "no exponer tokens en cabeceras ,cifrado adicional, rotacion periodica de claves ",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 12,
+                  "score": "7"
+                },
+                {
+                  "id": "fecbd7c0-21f3-4122-bc38-936efef5c671",
+                  "title": "request malformados para consumir cpu",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Denial of service",
+                  "description": "reuests maflormadosfurzan al servidor a gastar recursos excesivos",
+                  "mitigation": "validacion de formato, limites detamaño, waf, monitoreo de rendimiento",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 13,
+                  "score": "7"
+                }
+              ],
               "trustBoundaryIds": [
                 "95ea573d-1bac-4736-a92d-08102cc12f01"
-              ]
+              ],
+              "threatFrequency": {
+                "tampering": 2,
+                "informationDisclosure": 2,
+                "denialOfService": 2
+              }
             },
             "labels": [
               "HTTP Reques"
@@ -626,7 +825,15 @@
             "vertices": [
               {
                 "x": 210,
+                "y": 470
+              },
+              {
+                "x": 240,
                 "y": 490
+              },
+              {
+                "x": 280,
+                "y": 470
               }
             ]
           },
@@ -1418,6 +1625,6 @@
     ],
     "diagramTop": 2,
     "reviewer": "",
-    "threatTop": 7
+    "threatTop": 21
   }
 }
