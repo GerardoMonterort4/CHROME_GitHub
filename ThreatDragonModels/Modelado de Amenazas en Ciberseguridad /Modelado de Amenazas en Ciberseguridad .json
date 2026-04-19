@@ -927,7 +927,8 @@
             "shape": "flow",
             "attrs": {
               "line": {
-                "stroke": "#333333",
+                "stroke": "red",
+                "strokeWidth": 2.5,
                 "targetMarker": {
                   "name": "block"
                 },
@@ -948,16 +949,74 @@
               "outOfScope": false,
               "isTrustBoundary": false,
               "reasonOutOfScope": "",
-              "hasOpenThreats": false,
+              "hasOpenThreats": true,
               "isBidirectional": false,
               "isEncrypted": false,
               "isPublicNetwork": false,
               "protocol": "",
-              "threats": [],
+              "threats": [
+                {
+                  "id": "a8aa654c-32e2-42aa-9ecc-28bb6d61980c",
+                  "title": "manipulacion de parametros",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Tampering",
+                  "description": "Manipulación de parámetros o cuerpo de la petición (ej. inyección de datos, modificación de cabeceras).",
+                  "mitigation": "Validación estricta de parámetros, sanitización de entradas, uso de HTTPS/TLS, controles de integridad.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 29,
+                  "score": "7"
+                },
+                {
+                  "id": "0697d486-e46d-4773-8487-2d0828506e50",
+                  "title": "informacion sensible en cabeceras",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Information disclosure",
+                  "description": "La petición revela información sensible en cabeceras, parámetros o mensajes de error.",
+                  "mitigation": "Minimizar datos en URL, cifrado de payloads, manejo seguro de errores, políticas de privacidad en API.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 30,
+                  "score": "7"
+                },
+                {
+                  "id": "13f9361d-336c-4897-acd7-2224ae9b4ee1",
+                  "title": "envio masivo de peticiones",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Denial of service",
+                  "description": "Envío masivo de peticiones para saturar el servidor y dejar la aplicación inaccesible",
+                  "mitigation": "Rate limiting, detección de anomalías, firewalls de aplicación web (WAF), balanceo de carga.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 31,
+                  "score": "7"
+                },
+                {
+                  "id": "42148221-c36f-4126-a8aa-a82c40ce8e67",
+                  "title": "New STRIDE threat",
+                  "status": "Open",
+                  "severity": "TBD",
+                  "type": "Tampering",
+                  "description": "Provide a description for this threat",
+                  "mitigation": "Provide remediation for this threat or a reason if status is N/A",
+                  "modelType": "STRIDE",
+                  "new": true,
+                  "number": 32,
+                  "score": ""
+                }
+              ],
               "trustBoundaryIds": [
                 "95ea573d-1bac-4736-a92d-08102cc12f01",
                 "460f6506-2d1e-4274-8022-d60f6fba3d97"
-              ]
+              ],
+              "threatFrequency": {
+                "tampering": 1,
+                "informationDisclosure": 1,
+                "denialOfService": 1
+              }
             },
             "labels": [
               "Reques"
@@ -973,7 +1032,11 @@
             },
             "vertices": [
               {
-                "x": 600,
+                "x": 550,
+                "y": 450
+              },
+              {
+                "x": 630,
                 "y": 450
               }
             ]
@@ -1111,8 +1174,8 @@
                 "text": "Backen"
               },
               "body": {
-                "stroke": "#333333",
-                "strokeWidth": 1.5,
+                "stroke": "red",
+                "strokeWidth": 2.5,
                 "strokeDasharray": null
               }
             },
@@ -1209,12 +1272,119 @@
               "outOfScope": false,
               "isTrustBoundary": false,
               "reasonOutOfScope": "",
-              "hasOpenThreats": false,
+              "hasOpenThreats": true,
               "handlesCardPayment": false,
               "handlesGoodsOrServices": false,
               "isWebApplication": false,
               "privilegeLevel": "",
-              "threats": []
+              "threats": [
+                {
+                  "id": "ccb86611-c16a-4f50-9407-6ddcd7b5083c",
+                  "title": "suplantacion de servicios interrnos",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Spoofing",
+                  "description": "Un atacante suplanta servicios internos o credenciales de la aplicación para acceder al backend.",
+                  "mitigation": "Autenticación fuerte entre servicios, uso de certificados, gestión segura de claves.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 36,
+                  "score": "7"
+                },
+                {
+                  "id": "ef3fd35a-ae50-4c5e-9b00-2bdc52602afc",
+                  "title": "negacion de acciones",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Tampering",
+                  "description": "Un usuario o proceso niega haber ejecutado acciones en el backend (ej. cambios en datos o configuraciones).",
+                  "mitigation": "Logging seguro, auditoría inmutable, trazabilidad con identificadores únicos.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 37,
+                  "score": "7"
+                },
+                {
+                  "id": "213b7ebe-9dcf-43fd-8068-cfd68c2a7046",
+                  "title": "alteracion de datos ",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Repudiation",
+                  "description": "Alteración de datos o lógica en el backend (ej. manipulación de consultas SQL o archivos de configuración).",
+                  "mitigation": "Validación de entradas, uso de ORM para consultas, controles de integridad, cifrado en reposo.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 38,
+                  "score": "7"
+                },
+                {
+                  "id": "158c10b8-b0b5-485c-a188-0c6975e8b5e0",
+                  "title": "exposicion de informacion",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Information disclosure",
+                  "description": "El backend expone información sensible (ej. mensajes de error con detalles internos, datos confidenciales).",
+                  "mitigation": "Manejo seguro de errores, cifrado de datos sensibles, políticas de acceso mínimo.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 39,
+                  "score": "7"
+                },
+                {
+                  "id": "981ee2bb-d407-40c9-8bed-df92e39dbe17",
+                  "title": "backend con peticiones masivas ",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Denial of service",
+                  "description": "Sobrecarga del backend con peticiones masivas o procesos intensivos que lo vuelven inaccesible.",
+                  "mitigation": "Rate limiting, balanceo de carga, monitoreo de rendimiento, aislamiento de recursos críticos.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 40,
+                  "score": "7"
+                },
+                {
+                  "id": "7ca3310c-85ac-42d8-95c9-ed283a1430a6",
+                  "title": "perrmisos adiministrativos",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Elevation of privilege",
+                  "description": "Un atacante obtiene permisos administrativos o acceso a funciones restringidas del backend.",
+                  "mitigation": "Principio de privilegio mínimo, separación de roles, revisiones de autorización, controles de acceso estrictos.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 41,
+                  "score": "7"
+                },
+                {
+                  "id": "5efd6c3d-3650-4faf-8b47-4ba79dc78d3a",
+                  "title": "New STRIDE threat",
+                  "status": "Open",
+                  "severity": "TBD",
+                  "type": "Spoofing",
+                  "description": "Provide a description for this threat",
+                  "mitigation": "Provide remediation for this threat or a reason if status is N/A",
+                  "modelType": "STRIDE",
+                  "new": true,
+                  "number": 42,
+                  "score": ""
+                }
+              ],
+              "threatFrequency": {
+                "spoofing": 1,
+                "tampering": 1,
+                "repudiation": 1,
+                "informationDisclosure": 1,
+                "denialOfService": 1,
+                "elevationOfPrivilege": 1
+              }
+            },
+            "tools": {
+              "items": [
+                "boundary",
+                "button-remove"
+              ],
+              "name": null
             }
           },
           {
@@ -1245,7 +1415,8 @@
             "shape": "flow",
             "attrs": {
               "line": {
-                "stroke": "#333333",
+                "stroke": "red",
+                "strokeWidth": 2.5,
                 "targetMarker": {
                   "name": "block"
                 },
@@ -1266,16 +1437,61 @@
               "outOfScope": false,
               "isTrustBoundary": false,
               "reasonOutOfScope": "",
-              "hasOpenThreats": false,
+              "hasOpenThreats": true,
               "isBidirectional": false,
               "isEncrypted": false,
               "isPublicNetwork": false,
               "protocol": "",
-              "threats": [],
+              "threats": [
+                {
+                  "id": "85830dda-8e4e-4536-9aec-bfd1009aad6c",
+                  "title": "manipulacion de datos ",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Tampering",
+                  "description": "Alteración del contenido de la respuesta en tránsito (ej. manipulación de datos devueltos al usuario).",
+                  "mitigation": "Uso de HTTPS/TLS, firmas digitales, controles de integridad y validación en el cliente.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 33,
+                  "score": "7"
+                },
+                {
+                  "id": "dadd0322-91a1-4458-9674-5ce6485324a5",
+                  "title": "mensaje de errror detallados",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Information disclosure",
+                  "description": "La respuesta expone información sensible (ej. mensajes de error detallados, datos personales).",
+                  "mitigation": "Manejo seguro de errores, ocultar detalles técnicos, cifrado de datos sensibles, políticas de acceso mínimo.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 34,
+                  "score": "7"
+                },
+                {
+                  "id": "fddd66f0-f02a-41d3-a589-87612fc0032a",
+                  "title": "respuestas maliciossas",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Denial of service",
+                  "description": "Respuestas maliciosas o pesadas que saturan al cliente o generan indisponibilidad.",
+                  "mitigation": "Limitación de tamaño de respuesta, caching controlado, balanceo de carga, monitoreo de rendimiento.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 35,
+                  "score": "7"
+                }
+              ],
               "trustBoundaryIds": [
                 "95ea573d-1bac-4736-a92d-08102cc12f01",
                 "460f6506-2d1e-4274-8022-d60f6fba3d97"
-              ]
+              ],
+              "threatFrequency": {
+                "tampering": 1,
+                "informationDisclosure": 1,
+                "denialOfService": 1
+              }
             },
             "labels": [
               "Respons"
@@ -1711,6 +1927,6 @@
     ],
     "diagramTop": 2,
     "reviewer": "",
-    "threatTop": 28
+    "threatTop": 42
   }
 }
