@@ -335,8 +335,8 @@
                 "text": "Aplicacion We"
               },
               "body": {
-                "stroke": "#333333",
-                "strokeWidth": 1.5,
+                "stroke": "red",
+                "strokeWidth": 2.5,
                 "strokeDasharray": null
               }
             },
@@ -433,12 +433,112 @@
               "outOfScope": false,
               "isTrustBoundary": false,
               "reasonOutOfScope": "",
-              "hasOpenThreats": false,
+              "hasOpenThreats": true,
               "handlesCardPayment": false,
               "handlesGoodsOrServices": false,
               "isWebApplication": false,
               "privilegeLevel": "",
-              "threats": []
+              "threats": [
+                {
+                  "id": "99241b2b-4fe6-4e61-9e55-9eaa069e56c3",
+                  "title": "New STRIDE threat",
+                  "status": "Open",
+                  "severity": "TBD",
+                  "type": "Spoofing",
+                  "description": "Provide a description for this threat",
+                  "mitigation": "Provide remediation for this threat or a reason if status is N/A",
+                  "modelType": "STRIDE",
+                  "new": true,
+                  "number": 22,
+                  "score": ""
+                },
+                {
+                  "id": "4e088fac-e54e-404e-90b4-60252d3c5b72",
+                  "title": "suplantacion de identidad",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Spoofing",
+                  "description": "Un atacante suplanta la identidad de un usuario legítimo (ej. robo de credenciales o sesión).",
+                  "mitigation": "Autenticación multifactor, tokens seguros, gestión robusta de sesiones y cookies.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 23,
+                  "score": "7"
+                },
+                {
+                  "id": "be72317e-b441-4e84-b91c-7bccc956e9c5",
+                  "title": "negacion de accion",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Repudiation",
+                  "description": "El usuario niega haber realizado una acción (ej. transacciones o cambios en la aplicación).",
+                  "mitigation": "Logging seguro, trazabilidad con firmas digitales, auditoría inmutable.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 24,
+                  "score": "7"
+                },
+                {
+                  "id": "95c8bc92-4005-467f-aa3e-9dcfe2065184",
+                  "title": "alteracion de datos ",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Tampering",
+                  "description": "Alteración de datos en tránsito o en reposo (ej. manipulación de parámetros en formularios).",
+                  "mitigation": "Validación estricta de entradas, cifrado de datos en tránsito (TLS), controles de integridad.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 25,
+                  "score": "7"
+                },
+                {
+                  "id": "95cb2789-4772-441c-8263-4503f8d07225",
+                  "title": "exposicion de informacion",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Information disclosure",
+                  "description": "Exposición de información sensible (ej. errores detallados, datos personales en respuestas).",
+                  "mitigation": "Manejo seguro de errores, cifrado de datos sensibles, políticas de acceso mínimo.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 26,
+                  "score": "7"
+                },
+                {
+                  "id": "b74186c3-1d9a-4ff5-b6e2-485f58232d4a",
+                  "title": "sobrecarga de la aplicacion",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Denial of service",
+                  "description": "Sobrecarga de la aplicación con peticiones masivas o maliciosas.",
+                  "mitigation": "Rate limiting, firewalls de aplicación web (WAF), monitoreo y mitigación de tráfico anómalo.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 27,
+                  "score": "7"
+                },
+                {
+                  "id": "1fcd8723-39c7-424e-a65a-af14eaca4a97",
+                  "title": "permisos mayores",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Elevation of privilege",
+                  "description": "Un atacante obtiene permisos mayores a los que debería (ej. acceso administrativo).",
+                  "mitigation": "Principio de privilegio mínimo, revisiones de autorización, separación de roles y controles de acceso.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 28,
+                  "score": "7"
+                }
+              ],
+              "threatFrequency": {
+                "spoofing": 1,
+                "tampering": 1,
+                "repudiation": 1,
+                "informationDisclosure": 1,
+                "denialOfService": 1,
+                "elevationOfPrivilege": 1
+              }
             }
           },
           {
@@ -640,17 +740,7 @@
                 "x": 350,
                 "y": 290
               }
-            ],
-            "tools": {
-              "items": [
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead"
-              ],
-              "name": null
-            }
+            ]
           },
           {
             "shape": "trust-boundary-curve",
@@ -680,10 +770,6 @@
               "y": 230
             },
             "vertices": [
-              {
-                "x": 250,
-                "y": 500
-              },
               {
                 "x": 250,
                 "y": 150
@@ -1625,6 +1711,6 @@
     ],
     "diagramTop": 2,
     "reviewer": "",
-    "threatTop": 21
+    "threatTop": 28
   }
 }
