@@ -1045,7 +1045,8 @@
             "shape": "flow",
             "attrs": {
               "line": {
-                "stroke": "#333333",
+                "stroke": "red",
+                "strokeWidth": 2.5,
                 "targetMarker": {
                   "name": "block"
                 },
@@ -1066,16 +1067,100 @@
               "outOfScope": false,
               "isTrustBoundary": false,
               "reasonOutOfScope": "",
-              "hasOpenThreats": false,
+              "hasOpenThreats": true,
               "isBidirectional": false,
               "isEncrypted": false,
               "isPublicNetwork": false,
               "protocol": "",
-              "threats": [],
+              "threats": [
+                {
+                  "id": "fe833068-66f7-4252-962d-82bd3010a8c3",
+                  "title": "inyeccion sql",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Tampering",
+                  "description": "Manipulación de consultas SQL mediante inyección o alteración de parámetros para modificar datos o lógica.",
+                  "mitigation": "Uso de consultas parametrizadas (prepared statements), ORM seguros, validación de entradas, controles de integridad.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 43,
+                  "score": "7"
+                },
+                {
+                  "id": "33924073-758c-4afa-a290-21693797979d",
+                  "title": "datos confidenciales",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Information disclosure",
+                  "description": "La consulta o sus errores revelan información sensible de la base de datos (estructura, datos confidenciales).",
+                  "mitigation": "Manejo seguro de errores (sin mensajes detallados), cifrado de datos sensibles, políticas de acceso mínimo.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 44,
+                  "score": "7"
+                },
+                {
+                  "id": "866d4928-dcb8-4c14-a16a-5b8787a079e8",
+                  "title": "consultas maliciosas",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Denial of service",
+                  "description": "Consultas maliciosas o pesadas que saturan la base de datos y afectan la disponibilidad.",
+                  "mitigation": "Optimización de consultas, limitación de recursos, monitoreo de rendimiento, protección contra consultas abusivas.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 45,
+                  "score": "7"
+                },
+                {
+                  "id": "6b59525c-1cc0-4b3a-89f9-c708eaf5ac2e",
+                  "title": "manipulacion de consultas sql",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Tampering",
+                  "description": "Manipulación de consultas SQL mediante inyección o alteración de parámetros para modificar datos o lógica.",
+                  "mitigation": "Uso de consultas parametrizadas (prepared statements), ORM seguros, validación de entradas, controles de integridad.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 46,
+                  "score": "7"
+                },
+                {
+                  "id": "42dfdcbc-897c-4791-86f5-92784a10af72",
+                  "title": "datos confidenciales",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Information disclosure",
+                  "description": "La consulta o sus errores revelan información sensible de la base de datos (estructura, datos confidenciales).",
+                  "mitigation": "Manejo seguro de errores (sin mensajes detallados), cifrado de datos sensibles, políticas de acceso mínimo.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 47,
+                  "score": "7"
+                },
+                {
+                  "id": "ce992890-6a42-4bf6-82d2-0f8bab569526",
+                  "title": "consultas maliciosas",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Denial of service",
+                  "description": "Consultas maliciosas o pesadas que saturan la base de datos y afectan la disponibilidad.",
+                  "mitigation": "Optimización de consultas, limitación de recursos, monitoreo de rendimiento, protección contra consultas abusivas.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 48,
+                  "score": "7"
+                }
+              ],
               "trustBoundaryIds": [
                 "460f6506-2d1e-4274-8022-d60f6fba3d97",
                 "37d0eeb4-326a-434f-8378-dc5f8c556a8d"
-              ]
+              ],
+              "threatFrequency": {
+                "tampering": 2,
+                "informationDisclosure": 2,
+                "denialOfService": 2
+              }
             },
             "labels": [
               "SQL Quer"
@@ -1099,6 +1184,18 @@
                 "y": 510
               },
               {
+                "x": 1000,
+                "y": 510
+              },
+              {
+                "x": 1030,
+                "y": 530
+              },
+              {
+                "x": 1050,
+                "y": 530
+              },
+              {
                 "x": 1120,
                 "y": 510
               }
@@ -1108,7 +1205,8 @@
             "shape": "flow",
             "attrs": {
               "line": {
-                "stroke": "#333333",
+                "stroke": "red",
+                "strokeWidth": 2.5,
                 "targetMarker": {
                   "name": "block"
                 },
@@ -1129,13 +1227,58 @@
               "outOfScope": false,
               "isTrustBoundary": false,
               "reasonOutOfScope": "",
-              "hasOpenThreats": false,
+              "hasOpenThreats": true,
               "isBidirectional": false,
               "isEncrypted": false,
               "isPublicNetwork": false,
               "protocol": "",
-              "threats": [],
-              "trustBoundaryIds": []
+              "threats": [
+                {
+                  "id": "5f9a2ab6-0209-49b0-a57a-8d8ea548d476",
+                  "title": "peticion de pago",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Tampering",
+                  "description": "Manipulación de los parámetros de la petición de pago (ej. monto, moneda, destino).",
+                  "mitigation": "Validación estricta de parámetros, uso de firmas digitales, cifrado de datos en tránsito (TLS).",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 49,
+                  "score": "7"
+                },
+                {
+                  "id": "5578f1fc-7a1b-4267-a687-4111ccbc49a9",
+                  "title": "peticion de pago",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Information disclosure",
+                  "description": "La petición de pago expone información sensible (ej. datos de tarjeta, credenciales).",
+                  "mitigation": "Cifrado de datos sensibles, cumplimiento de PCI DSS, minimizar información en logs y cabeceras.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 50,
+                  "score": "7"
+                },
+                {
+                  "id": "58236845-4975-48b7-b41f-870c07536099",
+                  "title": "peticiones de pago ",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Denial of service",
+                  "description": "Envío masivo de peticiones de pago para saturar el servicio y bloquear transacciones legítimas.",
+                  "mitigation": "Rate limiting, detección de anomalías, firewalls de aplicación web (WAF), monitoreo de disponibilidad.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 51,
+                  "score": "7"
+                }
+              ],
+              "trustBoundaryIds": [],
+              "threatFrequency": {
+                "tampering": 1,
+                "informationDisclosure": 1,
+                "denialOfService": 1
+              }
             },
             "labels": [
               "Payment Reques"
@@ -1378,13 +1521,6 @@
                 "denialOfService": 1,
                 "elevationOfPrivilege": 1
               }
-            },
-            "tools": {
-              "items": [
-                "boundary",
-                "button-remove"
-              ],
-              "name": null
             }
           },
           {
@@ -1747,7 +1883,8 @@
             "shape": "flow",
             "attrs": {
               "line": {
-                "stroke": "#333333",
+                "stroke": "red",
+                "strokeWidth": 2.5,
                 "targetMarker": {
                   "name": "block"
                 },
@@ -1768,15 +1905,60 @@
               "outOfScope": false,
               "isTrustBoundary": false,
               "reasonOutOfScope": "",
-              "hasOpenThreats": false,
+              "hasOpenThreats": true,
               "isBidirectional": false,
               "isEncrypted": false,
               "isPublicNetwork": false,
               "protocol": "",
-              "threats": [],
+              "threats": [
+                {
+                  "id": "3b93b320-1aa2-41d3-bcbb-368d90376a1b",
+                  "title": "manipulacion de confirmaciones",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Tampering",
+                  "description": "Alteración del contenido de la respuesta de pago en tránsito (ej. manipulación de confirmaciones o estados de transacción).",
+                  "mitigation": "Uso de HTTPS/TLS, firmas digitales en respuestas, validación de integridad en el cliente y servidor.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 52,
+                  "score": "7"
+                },
+                {
+                  "id": "4b07fd04-b340-4e47-85a8-e9e840cd0318",
+                  "title": "respuesta de pago datos",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Information disclosure",
+                  "description": "La respuesta de pago expone información sensible (ej. datos de tarjeta, identificadores de transacción, mensajes de error detallados).",
+                  "mitigation": "Cifrado de datos sensibles, cumplimiento de PCI DSS, manejo seguro de errores, ocultar detalles técnicos.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 53,
+                  "score": "7"
+                },
+                {
+                  "id": "2d91b3bf-8f2f-4bd1-a352-e2e95c8893d6",
+                  "title": "respuesta maliciosa",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Denial of service",
+                  "description": "Respuestas maliciosas o pesadas que saturan al cliente o bloquean la comunicación con el servicio de pago.",
+                  "mitigation": "Limitación de tamaño de respuesta, caching controlado, balanceo de carga, monitoreo de disponibilidad.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 54,
+                  "score": "7"
+                }
+              ],
               "trustBoundaryIds": [
                 "460f6506-2d1e-4274-8022-d60f6fba3d97"
-              ]
+              ],
+              "threatFrequency": {
+                "tampering": 1,
+                "informationDisclosure": 1,
+                "denialOfService": 1
+              }
             },
             "labels": [
               "Payment Respons"
@@ -1794,6 +1976,18 @@
               {
                 "x": 950,
                 "y": 370
+              },
+              {
+                "x": 970,
+                "y": 370
+              },
+              {
+                "x": 1000,
+                "y": 390
+              },
+              {
+                "x": 1030,
+                "y": 430
               },
               {
                 "x": 1080,
@@ -1815,8 +2009,8 @@
                 "text": "API Externa\nServicio Externo\nPaymen"
               },
               "body": {
-                "stroke": "#333333",
-                "strokeWidth": 1.5,
+                "stroke": "red",
+                "strokeWidth": 2.5,
                 "strokeDasharray": null
               }
             },
@@ -1913,12 +2107,99 @@
               "outOfScope": false,
               "isTrustBoundary": false,
               "reasonOutOfScope": "",
-              "hasOpenThreats": false,
+              "hasOpenThreats": true,
               "handlesCardPayment": false,
               "handlesGoodsOrServices": false,
               "isWebApplication": false,
               "privilegeLevel": "",
-              "threats": []
+              "threats": [
+                {
+                  "id": "ca929ed1-422e-46c7-a502-cdc076345bec",
+                  "title": "manipulacion de llamadas API externa",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Tampering",
+                  "description": "Manipulación de las llamadas o respuestas de la API externa (ej. alteración de parámetros enviados al servicio de pago).",
+                  "mitigation": "Validación estricta de parámetros, uso de firmas digitales, cifrado en tránsito (TLS), controles de integridad.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 55,
+                  "score": "7"
+                },
+                {
+                  "id": "d6cb3adf-1ba5-476c-8307-363eaef72451",
+                  "title": "API externa expone informacion",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Information disclosure",
+                  "description": "La API externa expone información sensible en sus respuestas o errores (ej. datos de transacción, credenciales).",
+                  "mitigation": "Cumplimiento de PCI DSS, cifrado de datos sensibles, manejo seguro de errores, ocultar detalles técnicos.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 56,
+                  "score": ""
+                },
+                {
+                  "id": "79574a82-589d-48d4-82b9-e136f1f337d1",
+                  "title": "peticiones masivas API externa",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Spoofing",
+                  "description": "Peticiones masivas o maliciosas hacia la API externa que saturan el servicio y bloquean transacciones legítimas.",
+                  "mitigation": "Rate limiting, monitoreo de tráfico, balanceo de carga, mecanismos de resiliencia y fallback.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 57,
+                  "score": "7"
+                },
+                {
+                  "id": "f514fa1c-11ea-4d40-9f75-e711b243fb7a",
+                  "title": "suplantacion de credenciales o tokens ",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Spoofing",
+                  "description": "Un atacante suplanta credenciales o tokens para hacerse pasar por un cliente legítimo frente al servicio externo.",
+                  "mitigation": "Autenticación fuerte, uso de certificados, gestión segura de claves y tokens, MFA.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 58,
+                  "score": "7"
+                },
+                {
+                  "id": "8c95aee0-2236-4343-b930-8ab64370cf9c",
+                  "title": "usuario niega transaccion",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Repudiation",
+                  "description": "Un usuario o proceso niega haber realizado una transacción o invocación de la API externa.",
+                  "mitigation": "Logging seguro, auditoría inmutable, trazabilidad con identificadores únicos.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 59,
+                  "score": "7"
+                },
+                {
+                  "id": "cb4fe071-9cd7-4ac8-a799-4736d386cb7a",
+                  "title": "permisos superiores API externa ",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Denial of service",
+                  "description": "Un atacante obtiene permisos superiores en la API externa (ej. acceso administrativo o bypass de roles).",
+                  "mitigation": "Principio de privilegio mínimo, separación de roles, revisiones de autorización, controles de acceso estrictos.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 60,
+                  "score": "7"
+                }
+              ],
+              "threatFrequency": {
+                "spoofing": 2,
+                "tampering": 1,
+                "repudiation": 1,
+                "informationDisclosure": 1,
+                "denialOfService": 1,
+                "elevationOfPrivilege": 0
+              }
             }
           }
         ],
@@ -1927,6 +2208,6 @@
     ],
     "diagramTop": 2,
     "reviewer": "",
-    "threatTop": 42
+    "threatTop": 60
   }
 }
